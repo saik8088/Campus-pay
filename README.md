@@ -1,5 +1,4 @@
 # Campus-pay
-Know before you make payment.
 
 > **Tagline:** Know Before You Pay. Pay Without Confusion.
 
