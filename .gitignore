@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment variables — never commit these
+.env
+.env.local
+.env.production
+
+# Build output
+client/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Uploads (QR images)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,4 +1,4 @@
-# Campus-pay
+# CampusPay — Campus Stall Payment Assistant
 
 > **Tagline:** Know Before You Pay. Pay Without Confusion.
 
@@ -223,25 +223,16 @@ Configuration:
 
 ## Running the Application
 
-### Option A: Run Backend Server
-From the `server` directory:
-```bash
-cd server
-npm start
-# Server starts on http://localhost:5000
-```
-For auto-reloading during development:
+### Development
+From the `client` directory:
 ```bash
 npm run dev
+# Starts both the backend API and frontend dev server.
 ```
 
-### Option B: Run Frontend Dev Server
-From the `client` directory in a separate terminal:
-```bash
-cd client
-npm run dev
-# Application starts on http://localhost:5173
-```
+The API is available at `http://localhost:5000`; Vite proxies `/api` requests to it. MongoDB is optional for trying the app, but without `MONGODB_URI` in `server/.env` the API serves sample data and does not persist changes. To load real stalls, configure `MONGODB_URI` as described above.
+
+To run either service separately, use `npm run dev` in `server` and `npm run dev:client` in `client`.
 
 ### Production Build
 To create an optimized production build of the frontend:
@@ -261,6 +252,8 @@ npm run build
 cd server
 npm run seed
 ```
+**Warning:** The seed script deletes all existing `User` and `Stall` records before adding sample data. Run it only against a new or disposable database.
+
 This populates:
 - **Canteen Manager** (`canteen@campus.edu` / `password123`)
 - **Juice Bar Operator** (`juice@campus.edu` / `password123`)
